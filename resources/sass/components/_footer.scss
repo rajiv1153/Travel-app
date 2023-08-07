@@ -1,0 +1,51 @@
+.main__footer {
+    margin-top: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 30px;
+    background-color: #dae0e2;
+    h5 {
+        font-size: larger;
+        margin: 0;
+        text-align: center0;
+        margin: 20px 0;
+    }
+    .contacts {
+        min-width: 300px;
+        .contact__item {
+            margin: 10px 0;
+        }
+    }
+
+    .social {
+        width: 100%;
+        padding-top: 20px;
+        display: flex;
+        align-items: center;
+        flex-flow: column;
+        div {
+            margin-bottom: 10px;
+        }
+        ul {
+            max-width: 300px;
+            width: 100%;
+            margin: 0 auto;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            li {
+                margin: 10px;
+            }
+        }
+    }
+
+    @media (max-width: 899px) {
+        display: grid;
+        place-content: center;
+        gap: 30px;
+    }
+}

@@ -1,0 +1,226 @@
+.destination__wrapper {
+    width: 100%;
+    background-color: #eaf0f1;
+    .dest__banner {
+        width: 100%;
+        height: 300px;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 3;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        .banner__img {
+            width: 100%;
+            height: inherit;
+            object-fit: cover;
+        }
+        .heading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            white-space: nowrap;
+            z-index: 4;
+            font-size: 2rem;
+        }
+    }
+
+    .destination__detail {
+        max-width: 1200px;
+        margin: 0 auto;
+
+        & > * {
+            background: #fff;
+            margin: 50px 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .trip {
+            .sub__heading {
+                padding: 20px 0 10px;
+                h3 {
+                    margin: 0 auto;
+                }
+            }
+            .trip__overview {
+                padding-bottom: 20px;
+                .trip__highlights,
+                .trip__intro,
+                .trip__fact {
+                    h4 {
+                        background-color: #3498db;
+                        color: #fff;
+                        padding: 10px;
+                        margin: 0;
+                        text-align: center;
+                        letter-spacing: 0.1rem;
+                        line-height: 1.5rem;
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            top: 5px;
+                            left: 5px;
+                            right: 5px;
+                            bottom: 5px;
+                            z-index: 3;
+                            border: 18px solid transparent;
+                            border-left-color: #fff;
+                            border-right-color: #fff;
+                        }
+                    }
+                }
+                .trip__highlights {
+                    ul {
+                        li {
+                            list-style: none;
+                            margin: 10px 0;
+                            &::before {
+                                content: "check_circle";
+                                position: absolute;
+                                left: -1.5rem;
+                                font-family: "Material Icons";
+                                color: #3498db;
+                                font-size: 1rem;
+                                border-radius: 100%;
+                            }
+                        }
+                    }
+                }
+                .trip__intro {
+                    .intro__content {
+                        text-align: justify;
+                        padding: 0 20px;
+                    }
+                }
+                .trip__fact {
+                    ul {
+                        margin: 0;
+                        padding: 10px;
+                        li {
+                            list-style: none;
+                            display: flex;
+                            justify-content: space-between;
+                            padding: 10px;
+                            border-bottom: 1px solid #999;
+                            &:last-of-type {
+                                border-bottom: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .booking__wrapper {
+            padding-bottom: 20px;
+            h3 {
+                background-color: #3498db;
+                color: #fff;
+                padding: 10px;
+                font-size: 1.4rem;
+                margin: 0;
+                text-align: center;
+                letter-spacing: 0.1rem;
+                line-height: 1.5rem;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 5px;
+                    left: 5px;
+                    right: 5px;
+                    bottom: 5px;
+                    z-index: 3;
+                    border: 18px solid transparent;
+                    border-left-color: #fff;
+                    border-right-color: #fff;
+                }
+            }
+            p {
+                padding: 10px;
+                span.price {
+                    font-size: 1.3rem;
+                    color: #3498db;
+                }
+            }
+            .booking__form {
+                form {
+                    .input__box {
+                        margin: 10px;
+                        border: 1px solid rgba(153, 153, 153, 0.658);
+                        padding: 10px;
+
+                        input,
+                        textarea,
+                        select {
+                            all: unset;
+                            width: 100%;
+                        }
+                        textarea {
+                            width: 100%;
+                            overflow: auto;
+                            height: 100px;
+                        }
+                        &.disabled {
+                            background-color: rgba(153, 153, 153, 0.4);
+                        }
+
+                        &:focus-within {
+                            border-color: #3498db;
+                            box-shadow: 0 0 5px #3498db;
+                        }
+                        &:last-of-type {
+                            padding: 0;
+                            border-radius: 5px;
+                            overflow: hidden;
+                            & > input[type="submit"] {
+                                padding: 10px 0;
+                                text-align: center;
+                                background-color: #3498db;
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .destination__wrapper {
+        .dest__banner {
+            height: 400px;
+            .heading {
+                font-size: 2.5rem;
+            }
+        }
+        .destination__detail {
+            display: flex;
+            padding-bottom: 40px;
+            padding: 0 50px;
+            .trip {
+                width: 100%;
+                margin-left: auto;
+                padding: 0 10px;
+                margin-bottom: auto;
+            }
+            .booking__wrapper {
+                margin-right: auto;
+                padding: 10px;
+                min-width: 300px;
+                margin-bottom: auto;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 999px) {
+    .options {
+        display: none;
+    }
+}

@@ -1,0 +1,208 @@
+.main__header {
+    width: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 15px 20px;
+    box-shadow: 0 1px 5px 0 #999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: unset;
+    box-shadow: none;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+    a {
+        // all: unset;
+        cursor: pointer;
+        text-decoration: none;
+    }
+}
+
+.remove-fixed {
+    position: relative;
+}
+
+.top-sticky {
+    position: sticky;
+    top: 0;
+}
+
+.nav__items {
+    margin: 0;
+    padding: 0;
+    .nav__link {
+        list-style: none;
+        cursor: pointer;
+        padding: 0.2rem 0.5rem;
+        display: flex;
+        align-items: center;
+        & > a:hover {
+            color: #db7535;
+        }
+
+        & > #dropdownMenu2:hover {
+            color: #db7535 !important;
+        }
+
+        .bi {
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        // &::before {
+        //     content: "";
+        //     position: absolute;
+        //     top: 0;
+        //     bottom: 0;
+        //     left: 50%;
+        //     right: 50%;
+        //     border-bottom: 1px transparent;
+        //     transition: all 0.3s ease;
+        // }
+        &:hover,
+        &:active {
+            .bi {
+                transform: rotate(-180deg);
+            }
+            // &::before {
+            //     left: 0;
+            //     right: 0;
+            //     border-bottom: 2px solid #fff;
+            // }
+        }
+    }
+}
+
+.logo__wrapper {
+    .logo__btn {
+        text-decoration: none;
+        color: #fff;
+        .logo {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+    }
+}
+
+.burger div {
+    width: 28px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+.cross div {
+    &:nth-of-type(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    &:nth-of-type(2) {
+        opacity: 0;
+    }
+    &:nth-of-type(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
+.main__header.scrolled {
+    background-color: #fff;
+    box-shadow: 0 1px 10px #999;
+    color: #000;
+    *,
+    .logo,
+    a {
+        color: #000;
+    }
+    .burger div {
+        background-color: #000;
+    }
+
+    & > nav {
+        .dropdown-menu {
+            background-color: #fff;
+            border: 1px solid #00000010;
+            .dropdown-item:hover {
+                background-color: darken($color: #ffffff, $amount: 60%);
+                color: #fff;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 899px) {
+    nav {
+        display: none;
+    }
+
+    .nav__items {
+        height: inherit;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+        transform: translateX(0%);
+        .nav__link {
+            margin: 50px;
+            font-size: 1.3rem;
+            &::before {
+                all: unset;
+            }
+            &:active {
+                user-select: none;
+            }
+            .dropdown-menu {
+                background-color: #999;
+                .dropdown-item {
+                    padding: 10px;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .main__header {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .main__header a,
+    .logo {
+        color: #fff;
+    }
+
+    .nav__items {
+        display: flex;
+        .nav__link {
+            margin: 5px 10px;
+            font-size: 1rem;
+        }
+    }
+}
+
+@media (min-width: 900px) {
+    .burger {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .main__header {
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+    .logo__wrapper {
+        .logo__btn {
+            .logo {
+                font-size: 2rem;
+            }
+        }
+    }
+
+    .nav__items .nav__link {
+        font-size: 1.2rem;
+    }
+}
